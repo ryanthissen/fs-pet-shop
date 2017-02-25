@@ -23,6 +23,7 @@ app.get('/pets', function(req, res) {
 
     var pets = JSON.parse(petsJSON);
 
+    res.set('Content-Type', 'application/json');
     res.send(pets);
   })
 });
@@ -52,8 +53,6 @@ app.post('/pets', function(req, res) {
       console.error(err.stack);
       return res.sendStatus(500);
     }
-
-
     var pets = JSON.parse(petsJSON);
     var age = Number(req.body.age);
     var kind = req.body.kind;
@@ -62,7 +61,7 @@ app.post('/pets', function(req, res) {
 
     if (!age || !kind || !name) {
       console.error(`Not the correct info provided.  Include age, kind, name.`);
-      return res.sendStatus(400)
+      return res.sendStatus(400);
     }
     pets.push(pet);
 
