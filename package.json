@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "lint": "eslint",
-    /*"start": "nodemon",*/
+    "start": "nodemon",
     "test": "mocha"
   },
   "repository": {
