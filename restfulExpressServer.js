@@ -3,7 +3,7 @@
 var express = require('express');
 var app = express();
 app.disable('x-powered-by');
-var port = process.env.PORT || 8080;
+var port = process.env.port;
 
 var fs = require('fs');
 var path = require('path');
